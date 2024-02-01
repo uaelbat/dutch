@@ -1,4 +1,4 @@
 .PHONY: create
 
 create:
-	npx create-react-app $(PROJ) --template typescript
+	yarn create vite $(PROJ) --template react-ts
