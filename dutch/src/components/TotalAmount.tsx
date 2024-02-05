@@ -1,11 +1,9 @@
-import React, { useState } from 'react';
-
-interface TextInputProps {
+interface TotalAmountInputProps {
   value: string;
   onChange: (newValue: string) => void;
 }
 
-const TotalAmount: React.FC<TextInputProps>  = ({ value, onChange }) => {
+const TotalAmount: React.FC<TotalAmountInputProps>  = ({ value, onChange }) => {
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     onChange(event.target.value);
   };
