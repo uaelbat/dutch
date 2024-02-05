@@ -7,7 +7,6 @@ function App() {
 
   return (
     <div className="App">
-      <h1>React-router-V6</h1>
       <Routes>
         <Route path="/" element={ <Home /> } />
         <Route path="/content" element={ <Content /> } />
