@@ -1,6 +1,6 @@
 const Content = () => {
   return (
-    <div>飲み会アプリ</div>
+    <div className="text-xl">飲み会アプリ</div>
   )
 }
 
