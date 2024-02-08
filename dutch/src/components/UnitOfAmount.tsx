@@ -15,9 +15,8 @@ const UnitOfAmount: React.FC<RadioButtonsProps> = ({ selectedValue, onRadioChang
       <label>
         <input
           type="radio"
-          value="option1"
-          defaultChecked
-          checked={selectedValue === 'option1'}
+          value="1000"
+          checked={selectedValue === '1000'}
           onChange={handleRadioChange}
         />
         1000円単位
@@ -27,8 +26,8 @@ const UnitOfAmount: React.FC<RadioButtonsProps> = ({ selectedValue, onRadioChang
       <label>
         <input
           type="radio"
-          value="option2"
-          checked={selectedValue === 'option2'}
+          value="500"
+          checked={selectedValue === '500'}
           onChange={handleRadioChange}
         />
         500円単位
@@ -38,8 +37,8 @@ const UnitOfAmount: React.FC<RadioButtonsProps> = ({ selectedValue, onRadioChang
       <label>
         <input
           type="radio"
-          value="option3"
-          checked={selectedValue === 'option3'}
+          value="100"
+          checked={selectedValue === '100'}
           onChange={handleRadioChange}
         />
         100円単位
