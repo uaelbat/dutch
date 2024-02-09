@@ -23,7 +23,7 @@ const handleUnitChange = (value: string) => {
 // TO DO Listから受け取った値にする
 const list = [{id:1, rate:2, count:2, amount:0},
   {id:2, rate:1, count:4, amount:0},
-  {id:3, rate:0, count:1, amount:10000}]
+  {id:3, rate:0, count:1, amount:10000}];
 
 const remainingAmount:number = Number(totalAmount) - list.map((l)=>l.amount).reduce((acc,current)=>acc+current,0)
 
@@ -34,12 +34,12 @@ const amountList = list.map((l)=> ({value: remainingAmount * l.rate / totalRate,
 const unitAmountList = amountList.map((al)=>
 (al.value % Number(selectedUnit)) < Number(selectedUnit)/2
 ? al.value - al.value % Number(selectedUnit)
-: al.value + 1000 - al.value % Number(selectedUnit));
+: al.value + Number(selectedUnit) - al.value % Number(selectedUnit));
 
 const surplusAmountList = amountList.map((al)=>
 (al.value % Number(selectedUnit)) < Number(selectedUnit)/2
 ?(al.value % Number(selectedUnit)) * al.count
-:(1000 -  al.value % Number(selectedUnit)) * al.count);
+:(Number(selectedUnit) -  al.value % Number(selectedUnit)) * al.count);
 
 // const surplusAmountList = list.map((l)=>remainingAmount * l.rate * l.count / totalRate).map((al) => al % Number(selectedUnit))
   return (
