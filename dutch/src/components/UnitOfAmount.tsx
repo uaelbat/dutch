@@ -11,7 +11,6 @@ const UnitOfAmount: React.FC<RadioButtonsProps> = ({ selectedValue, onRadioChang
   };
   return (
     <div>
-      {/* ラジオボタン1 */}
       <label>
         <input
           type="radio"
@@ -22,7 +21,6 @@ const UnitOfAmount: React.FC<RadioButtonsProps> = ({ selectedValue, onRadioChang
         1000円単位
       </label>
 
-      {/* ラジオボタン2 */}
       <label>
         <input
           type="radio"
@@ -33,7 +31,6 @@ const UnitOfAmount: React.FC<RadioButtonsProps> = ({ selectedValue, onRadioChang
         500円単位
       </label>
 
-      {/* ラジオボタン3 */}
       <label>
         <input
           type="radio"
