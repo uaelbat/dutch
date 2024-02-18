@@ -31,9 +31,9 @@ const Content = () => {
   const handleAmountRateChange = (value: InputSet[]) => {
     setInputAmountRateList(value);
     const numList = inputAmountRateList.map(obj => {
-      const rate = Number(obj.rate) || 0;
-      const amount = Number(obj.amount) || 0;
       const count = Number(obj.count) || 0;
+      const rate = count !== 0 ? Number(obj.rate) || 0 : 0;
+      const amount = count !== 0 ? Number(obj.amount) || 0 : 0;
       return { rate: rate, amount:amount, count:count };
     });
     setList(numList)
