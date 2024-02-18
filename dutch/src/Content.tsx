@@ -60,9 +60,6 @@ const Content = () => {
       <UnitOfAmount selectedValue={selectedUnit} onRadioChange={handleUnitChange} />
       <List unitAmountList={unitAmountList} inputAmountRateList={inputAmountRateList}
        handleAmountRateChange={handleAmountRateChange}/>
-      <div>{unitAmountList[0]}</div>
-      <div>{unitAmountList[1]}</div>
-      <div>{unitAmountList[2]}</div>
       <SurplusAmount/>
       <div>{surplusAmountList.reduce((acc,current)=>acc+current,0)}</div>
       <ResetButton/>
