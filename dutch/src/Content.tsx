@@ -25,23 +25,25 @@ const Content = () => {
     setSelectedUnit(value);
   };
 
-  // TO DO Listから受け取った値にする
+  const [list, setList] = useState([{rate: 0, amount:0, count:0}]);
+
   const [inputAmountRateList, setInputAmountRateList] = useState([{rate: '', amount:'', count:''}]);
   const handleAmountRateChange = (value: InputSet[]) => {
     setInputAmountRateList(value);
-    console.log(inputAmountRateList)
+    const numList = inputAmountRateList.map(obj => {
+      const rate = Number(obj.rate) || 0;
+      const amount = Number(obj.amount) || 0;
+      const count = Number(obj.count) || 0;
+      return { rate: rate, amount:amount, count:count };
+    });
+    setList(numList)
   };
-
-
-  const list = [{id:1, rate:2, count:2, amount:0},
-    {id:2, rate:1, count:4, amount:0},
-    {id:3, rate:0, count:1, amount:10000}];
 
   const remainingAmount:number = Number(totalAmount) - list.map((l)=>l.amount).reduce((acc,current)=>acc+current,0)
 
   const totalRate:number = list.map((l)=>l.rate*l.count).reduce((acc,current)=>acc+current,0)
 
-  const amountList = list.map((l)=> ({value: remainingAmount * l.rate / totalRate, count: l.count}))
+  const amountList = list.map((l)=> ({value: totalRate!==0 ? remainingAmount * l.rate / totalRate:0, count: l.count}));
 
   const unitAmountList = amountList.map((al)=>
   (al.value % Number(selectedUnit)) < Number(selectedUnit)/2
@@ -52,8 +54,6 @@ const Content = () => {
   (al.value % Number(selectedUnit)) < Number(selectedUnit)/2
   ?(al.value % Number(selectedUnit)) * al.count
   :(Number(selectedUnit) -  al.value % Number(selectedUnit)) * al.count);
-
-  // const surplusAmountList = list.map((l)=>remainingAmount * l.rate * l.count / totalRate).map((al) => al % Number(selectedUnit))
   return (
     <>
       <TotalAmount value={totalAmount} onChange={handleTotalAmountChange}/>

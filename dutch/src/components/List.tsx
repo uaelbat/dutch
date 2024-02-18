@@ -12,7 +12,6 @@ interface InputSet {
 }
 
 const List: React.FC<ListProps>  = ({unitAmountList, inputAmountRateList, handleAmountRateChange}) => {
-  // const [inputAmountRateList, handleAmountRateChange] = useState([{rate: '', amount:'', count:''}]);
   const [isRate, setIsRate] = useState([false]);
 
   const handleAddInputSet = () => {
