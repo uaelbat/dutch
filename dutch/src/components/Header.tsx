@@ -22,3 +22,5 @@ export const Header: React.FC<Props> = ({ children, height=12, themeType='primar
     </div>
   )
 }
+
+export default Header
