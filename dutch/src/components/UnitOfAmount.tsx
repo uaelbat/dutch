@@ -1,5 +1,3 @@
-import React, { useState } from 'react';
-
 interface RadioButtonsProps {
   selectedValue: string;
   onRadioChange: (value: string) => void;
